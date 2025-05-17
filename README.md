@@ -24,4 +24,3 @@ Bu dosya, proje başında oluşturulmuş ve geliştirme süreci boyunca güncell
 
 👤 Hazırlayan: Mert İnce  
 🎓 Öğrenci No: B231210012
-
