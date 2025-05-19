@@ -1,0 +1,117 @@
+<!-- sehir.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şehrim - İstanbul</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <style>
+    .slider-container {
+        max-width: 800px;
+        margin: auto;
+    }
+    .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Sidebar offcanvas menü -->
+    <button class="btn btn-secondary m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu">
+      ☰
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="menuLabel">Site Menüsü</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group">
+            <li class="list-group-item"><a href="index.html">Hakkımda</a></li>
+            <li class="list-group-item"><a href="cv.html">Özgeçmiş</a></li>
+            <li class="list-group-item"><a href="sehir.html">Şehrim</a></li>
+            <li class="list-group-item"><a href="mirasimiz.html">Mirasımız</a></li>
+            <li class="list-group-item"><a href="takimiz.html">Takımımız</a></li>
+            <li class="list-group-item"><a href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+            <li class="list-group-item"><a href="login.html">Giriş</a></li>
+            <li class="list-group-item"><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <header class="container bg-dark text-white text-center p-4 rounded-sm">
+        <h1>Şehrim: İstanbul</h1>
+        <p>Tarih, kültür ve yaşam dolu şehir</p>
+    </header>
+
+
+  <!-- Slider başlangıcı -->
+    <div class="slider-container mt-3">
+        <div id="sehirSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="#ayasofya"><img src="ayasofya.png" class="d-block w-100" alt="Ayasofya"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="#galatakulesi"><img src="galatakulesi.jpg" class="d-block w-100" alt="Galata Kulesi"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="#kizkulesi"><img src="kizkulesi.jpg" class="d-block w-100" alt="Kız Kulesi"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="#topkapi"><img src="topkapisarayi.webp" class="d-block w-100" alt="Topkapı Sarayı"></a>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#sehirSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Önceki</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#sehirSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Sonraki</span>
+        </button>
+        </div>
+    </div>
+
+    <br><br>
+
+
+    <main class="container mt-4">
+        <section>
+            <h2 class="fw-bold">Genel Bilgiler</h2>
+            <p>İstanbul, Türkiye’nin en büyük ve en kalabalık şehridir. Yaklaşık 16 milyonluk nüfusuyla sadece Türkiye’nin değil, aynı zamanda Avrupa’nın da en büyük şehirlerinden biridir. Asya ve Avrupa kıtalarını birbirine bağlayan eşsiz konumuyla tarih boyunca birçok medeniyete ev sahipliği yapmıştır. Roma, Bizans ve Osmanlı İmparatorluklarının başkenti olmuş bu şehir, hem tarihi hem de kültürel zenginliğiyle dikkat çeker. Boğaz’ı, camileri, sarayları, hanları, köprüleri ve sokak yaşamıyla İstanbul, her yıl milyonlarca turistin ilgisini çeken dinamik bir metropoldür.</p>
+        </section>
+
+        <section id="ayasofya" class="mt-5">
+            <h3>Ayasofya</h3>
+            <p>Ayasofya, İstanbul’un simgelerinden biridir ve dünya çapında mimari, tarihi ve dini önemiyle tanınır. 537 yılında Bizans İmparatoru I. Justinianus tarafından kilise olarak inşa edilmiştir. 1453 yılında İstanbul’un fethinden sonra camiye çevrilmiş, 1935 yılında ise müze olarak halka açılmıştır. 2020 yılında tekrar cami statüsü kazanmıştır. Ayasofya, kubbesi, mozaikleri ve ihtişamlı yapısıyla ziyaretçilerini büyüler. Hem Hristiyan hem Müslüman izleri taşımasıyla, farklı inançları temsil eden sembolik bir yapıdır.</p>
+        </section>
+
+        <section id="galatakulesi" class="mt-5">
+            <h3>Galata Kulesi</h3>
+            <p>Galata Kulesi, İstanbul’un Beyoğlu ilçesinde yer alır ve şehrin siluetinin en ikonik yapılarından biridir. 14. yüzyılda Cenevizliler tarafından savunma amacıyla inşa edilmiştir. Yaklaşık 67 metre yüksekliğindeki kule, uzun yıllar boyunca yangın gözetleme kulesi olarak da kullanılmıştır. Günümüzde turistik bir seyir terası olarak hizmet verir. Galata Kulesi’nden İstanbul Boğazı, Haliç ve tarihi yarımada muhteşem bir şekilde izlenebilir. Ayrıca Hezarfen Ahmet Çelebi’nin 17. yüzyılda buradan Üsküdar’a kadar kanatlarla uçtuğu rivayetiyle de ün kazanmıştır.</p>
+        </section>
+
+        <section id="kizkulesi" class="mt-5">
+            <h3>Kız Kulesi</h3>
+            <p>Kız Kulesi, İstanbul Boğazı’nda Salacak açıklarında küçük bir adacık üzerine inşa edilmiştir. Tarihi M.Ö. 5. yüzyıla kadar uzanır. Zaman içinde gözetleme kulesi, deniz feneri ve gümrük istasyonu gibi birçok farklı amaçla kullanılmıştır. Kuleyle ilgili en bilinen efsane, bir kehaneti gerçekleştirmemek için kuleye kapatılan bir prensesin yılan tarafından sokularak ölmesiyle ilgilidir. Bu romantik ve trajik hikâyelerle zenginleşmiş olan yapı, günümüzde restoran ve müze olarak hizmet verir. Hem tarihî hem görsel anlamda İstanbul’un en özel yapılarından biridir.</p>
+        </section>
+
+        <section id="topkapi" class="mt-5">
+            <h3>Topkapı Sarayı</h3>
+            <p>Topkapı Sarayı, Osmanlı İmparatorluğu’nun yaklaşık 400 yıl boyunca siyasi ve idari merkezi olmuştur. 15. yüzyılda Fatih Sultan Mehmet tarafından yaptırılmış ve sonraki padişahlar tarafından genişletilmiştir. Saray, dört avludan ve onlarca yapıdan oluşur. Harem dairesi, kutsal emanetler bölümü, padişah tahtları ve göz alıcı süslemeleriyle tarih boyunca görkemini korumuştur. Günümüzde müze olarak ziyaretçilere açıktır ve Osmanlı hanedanının günlük yaşamına dair eşsiz bilgiler sunar.</p>
+        </section>
+  </main>
+
+  <footer class="text-center bg-light py-3 mt-5">
+     <p>&copy; 2025 - Mert İnce | Web Teknolojileri Proje Ödevi</p>
+  </footer>
+</body>
+</html>
