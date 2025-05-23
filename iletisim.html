@@ -1,0 +1,139 @@
+<!-- degerlendirme.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Değerlendirme Formu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function validateForm() {
+      const ad = document.getElementById('ad').value.trim();
+      const soyad = document.getElementById('soyad').value.trim();
+      const yas = document.getElementById('yas').value.trim();
+      const telefon = document.getElementById('telefon').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mesaj = document.getElementById('mesaj').value.trim();
+      const cinsiyetSecili = document.querySelector('input[name="cinsiyet"]:checked');
+      const konuSecilenler = document.querySelectorAll('input[name="konular[]"]:checked');
+      const unvan = document.getElementById('unvan').value;
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const telefonRegex = /^[0-9]{10,11}$/;
+
+      if (!ad || !soyad || !yas || !telefon || !email || !mesaj) {
+        alert("Lütfen tüm alanları doldurunuz.");
+        return false;
+      }
+      if (!cinsiyetSecili) {
+        alert("Cinsiyet seçiniz.");
+        return false;
+      }
+      if (konuSecilenler.length === 0) {
+        alert("En az bir değerlendirme konusu seçiniz.");
+        return false;
+      }
+      if (unvan === "") {
+        alert("Lütfen ünvan seçiniz.");
+        return false;
+      }
+      if (!emailRegex.test(email)) {
+        alert("Geçerli bir e-posta giriniz.");
+        return false;
+      }
+      if (!telefonRegex.test(telefon)) {
+        alert("Telefon numarası 10 veya 11 haneli olmalıdır.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+    <!-- Sidebar offcanvas menü -->
+    <button class="btn btn-secondary m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu">
+      ☰
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+      <div class="offcanvas-header">  
+        <h5 class="offcanvas-title" id="menuLabel">Site Menüsü</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-group">
+          <li class="list-group-item"><a href="index.html">Hakkımda</a></li>
+          <li class="list-group-item"><a href="cv.html">Özgeçmiş</a></li>
+          <li class="list-group-item"><a href="sehir.html">Şehrim</a></li>
+          <li class="list-group-item"><a href="takimim.html">Takımımız</a></li>
+          <li class="list-group-item"><a href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+          <li class="list-group-item"><a href="login.html">Giriş</a></li>
+          <li class="list-group-item"><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+
+  <div class="container mt-5">
+    <header class="container bg-dark text-white text-center p-4 rounded-sm">
+    <h1>Değerlendirme Formu</h1>
+    <p>Oluşturduğum bu websitesi ile ilgili ne düşünüyorsunuz?</p>
+    </header>
+    <br><br>
+    <form onsubmit="return validateForm()" method="POST" action="#">
+      <div class="mb-3">
+        <label for="ad" class="form-label">Ad</label>
+        <input type="text" class="form-control" id="ad" name="ad">
+      </div>
+      <div class="mb-3">
+        <label for="soyad" class="form-label">Soyad</label>
+        <input type="text" class="form-control" id="soyad" name="soyad">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Cinsiyet</label><br>
+        <input type="radio" name="cinsiyet" value="erkek"> Erkek
+        <input type="radio" name="cinsiyet" value="kadın"> Kadın
+      </div>
+      <div class="mb-3">
+        <label for="yas" class="form-label">Yaş</label>
+        <input type="number" class="form-control" id="yas" name="yas" min="10" max="100">
+      </div>
+      <div class="mb-3">
+        <label for="telefon" class="form-label">Telefon</label>
+        <input type="text" class="form-control" id="telefon" name="telefon" placeholder="05XXXXXXXXX">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-posta</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Değerlendirme Konusu</label><br>
+        <input type="checkbox" name="konular[]" value="tasarim"> Sayfa Tasarımı<br>
+        <input type="checkbox" name="konular[]" value="icerik"> Sayfa İçeriği<br>
+        <input type="checkbox" name="konular[]" value="gorsel"> Görsel Kullanımı<br>
+        <input type="checkbox" name="konular[]" value="erisim"> Erişilebilirlik<br>
+        <input type="checkbox" name="konular[]" value="hiz"> Hız / Performans
+      </div>
+      <div class="mb-3">
+        <label for="unvan" class="form-label">Ünvanınız</label>
+        <select class="form-select" id="unvan" name="unvan">
+          <option value="">Seçiniz</option>
+          <option value="akademisyen">Akademisyen</option>
+          <option value="arastirma">Araştırma Görevlisi</option>
+          <option value="sivil">Sivil</option>
+          <option value="ogrenci">Öğrenci</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="mesaj" class="form-label">Mesajınız</label>
+        <textarea class="form-control" id="mesaj" name="mesaj" rows="5"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="reset" class="btn btn-secondary">Temizle</button>
+        <button type="submit" class="btn btn-primary">Gönder</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
